@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blacklisterapicli", "blacklisterapicli\blacklisterapicli.csproj", "{F8264D10-4DF8-4397-B5FB-F7E85DC19496}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8264D10-4DF8-4397-B5FB-F7E85DC19496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8264D10-4DF8-4397-B5FB-F7E85DC19496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8264D10-4DF8-4397-B5FB-F7E85DC19496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8264D10-4DF8-4397-B5FB-F7E85DC19496}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CA745F1-5C4B-4ACF-AB30-15EAE3F13625}
+	EndGlobalSection
+EndGlobal
