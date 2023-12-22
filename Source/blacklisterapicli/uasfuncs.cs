@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -52,12 +52,13 @@ namespace blacklisterapicli
                     bool resultiffound = await CheckServerId(idtouse);
                     if (!resultiffound)
                     {
-                        ofuncs.ColouredText("\nVirhe: user-id virheellinen ja pavilein-id ei löydy tietokannassa", ConsoleColor.Yellow);
+                        ofuncs.ColouredText("\nError: user-id is invalid and server id not found in database", ConsoleColor.Yellow);
+                        ofuncs.die();
                     }
-                    
+
                     found = false;
                     ofuncs.die();
-                    
+
                 }
                 found = true;
                 return $"{jsonuserdata["username"]}#{jsonuserdata["discriminator"]}";
