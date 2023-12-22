@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace blacklisterapicli
         }
 
 
-        public static string GetApiKey() 
+        public static string GetApiKey()
         {
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "blacklistercli");
             string filePath = Path.Combine(folderPath, "apikey.txt");
