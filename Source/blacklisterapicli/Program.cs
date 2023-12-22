@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
@@ -14,12 +14,14 @@ namespace blacklisterapicli
         {
             if (args.Length != 1)
             {
-                Console.Write("Käytä yks argumentti, eg: blist 12389472389472348972\n\n\n1: Tarkista palvelin tai käyttäjä\n2: Määritä api-avain\n3: Poistu :c\n\nValitse vaihtoehto: ");
-                
+                Console.Write("Enter 1 argument or enter a user or server id, eg: blist 12389472389472348972\n\n\n1: Check a server or user id\n2: Api key settings\n3: Exit program :c\n\nOption: ");
+
                 ulong option = ulong.Parse(Console.ReadLine()); //Ulong niin se ei bug out ja voimme debugata, jos se on suuri määrä.
                 if (option >= 4)
                 {
-                    ofuncs.ColouredText("Virhe: valitse ensi kerralla pätevä vaihtoehto.", ConsoleColor.Yellow);
+                    string useradiscrimforinput = await uasfuncs.FetchDiscordUsername(option);
+
+                    await uasfuncs.CheckUserBlacklist(useradiscrimforinput, option);
                     ofuncs.die();
                 }
 
@@ -35,7 +37,7 @@ namespace blacklisterapicli
                         break;
 
                     case 2:
-                        Console.Write("Syötä api-avaim:");
+                        Console.Write("Paste your api key or type view to see it:");
                         string apikey = Console.ReadLine();
                         if (apikey == "view")
                         {
@@ -44,7 +46,7 @@ namespace blacklisterapicli
                             ofuncs.die();
                         }
                         ofuncs.SetApiKey(apikey);
-                        await Console.Out.WriteLineAsync($"Api-avaimesi on onnistuneesti tallennettu: {apikey}");
+                        await Console.Out.WriteLineAsync($"Your api key was set as: {apikey}");
                         ofuncs.die();
                         break;
 
